@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
+import Timer from './components/Timer Webhook/Timer'
 import './App.css';
+
 
 const App = () => {
   const [courseGoals, setCourseGoals] = useState([
-    { text: 'Do all exercises!', id: 'g1' },
-    { text: 'Finish the course!', id: 'g2' }
+    /*{ text: 'Lorem!', id: 'g1' },
+    { text: 'Ipsum', id: 'g2' } */
   ]);
 
   const addGoalHandler = enteredText => {
@@ -26,7 +28,11 @@ const App = () => {
   };
 
   let content = (
+    <div>
+      <h1 style={{  textAlign: 'center'  }}>Welcome to Goal Tracker APP</h1>
     <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+    </div>
+    
   );
 
   if (courseGoals.length > 0) {
@@ -37,6 +43,9 @@ const App = () => {
 
   return (
     <div>
+        <section id="Timer">
+          <Timer />
+        </section>
       <section id="goal-form">
         <CourseInput onAddGoal={addGoalHandler} />
       </section>

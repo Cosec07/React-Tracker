@@ -1,0 +1,9 @@
+#rect{
+    text-align: center;
+    display: block;
+    border: 10px solid white;
+    overflow: auto;
+    resize: both;
+    width: 200px;
+    height: auto;
+}
